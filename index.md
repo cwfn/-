@@ -5,7 +5,7 @@
 		
 	.bg{ /* 背景*/
 				margin: 0;
-				background:url(img/1.jpg) 
+				background:url(1.jpg) 
 				no-repeat; 
 				width: 1920px; 
 				height:6000px;
