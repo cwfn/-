@@ -1,21 +1,9 @@
-
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-	</head>
-	<body>
-		<div>
-			<input type="button" value="点击给出随机数字" onclick="random()"/>
-			<input type="button" id="inputid2" value="显示答案" onclick="show()"/>
-			<p id="pid"></p>
-			<br />
-			<h3>请输入四位不同的数字</h3>
-			<input id="inputid" type="text" />
-			<input type="button" value="确定"  onclick="adjust()"/>
-			<p id="pid2"></p>
-			<input type="text" id="textid" style="height: 200px;"/>
-		</div>
+		
 		
 		<script>
 			function random(){
@@ -31,7 +19,8 @@
 									if(b!=d){
 										if(c!=d){	
 											e=(a*1000+b*100+c*10+d);
-											alert("成功给出数字");
+											document.getElementById("pid0").innerHTML="成功给出数字";
+											
 											break;
 										}
 									}
@@ -48,8 +37,9 @@
 			function show(){
 				document.getElementById("pid").innerHTML=e;
 			}
-			
+			var n=1;
 			function adjust(){
+				var array= new Array();
 				var i=document.getElementById("inputid").value;
 				var d1 = parseInt(i%10);
                 var c1 = parseInt((i/10)%10); 
@@ -57,7 +47,7 @@
                 var a1 = parseInt(i/1000);
                 var count=0;
                 var count1=0;
-                count
+                
                 if(a1==a){count++;}
                 if(a1==b){count1++;}
                 if(a1==c){count1++;}
@@ -78,18 +68,33 @@
                 if(d1==c){count1++;}
                 if(d1==d){count++;}
                 
-                
-                //document.getElementById("pid2").innerHTML=(i+"   "+count+"A"+count1+"B");
-                
-                var oText=document.getElementById('textid');
-                oText.value=i+"   "+count+"A"+count1+"B";
-                
-                
-                if(count!=4){
-                	
+                document.getElementById("count").innerHTML=("你已经尝试了"+n+"次");
+                document.getElementById("out").innerHTML=(i+"   "+count+"A"+count1+"B");
+                if(count==4){
+                	document.getElementById("out1").innerHTML=("恭喜猜到数字！！！");
                 }
+                n++;
             }
 		</script>
+		
+		
+		
+	</head>
+	<body>
+		<div>
+			<input type="button" value="点击给出随机数字" onclick="random()"/>
+			<input type="button" id="inputid2" value="显示答案" onclick="show()"/>
+			<p id="pid0"></p>
+			<p id="pid"></p>
+			<h3>请输入四位不同的数字</h3>
+			<input id="inputid" type="text" />
+			<input type="button" value="确定"  onclick="adjust()"/>
+			<br />
+			<p id="count"></p>
+			<p id="out"></p>
+			<p id="out1"></p>
+		</div>
+		
 		
 	</body>
 </html>
