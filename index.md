@@ -1,3 +1,4 @@
+
 <html>
 	<head>
 		<meta charset="UTF-8">
@@ -75,15 +76,22 @@
                 n++;
             }
 		</script>
-		
-		
+		<style>
+			.h6{
+				position: absolute;
+				top:80%;
+				left: 90%;
+			}
+		</style>
 		
 	</head>
+	
 	<body>
 		<div>
 			<h3>游戏说明：点击按钮随机给出四位不重复的数字，玩家需要给出所猜想的数字</h3>
 			<h3>若数字和其位置都对对应，则获得一个A；若存在数字但位置不对应，则给出一个B</h3>
 			<h3>若显示结果为4A0B则完成游戏</h3>
+			<h6 class="h6">create by zgz</h6>
 			<input type="button" value="点击给出随机数字" onclick="random()"/>
 			<input type="button" id="inputid2" value="显示答案" onclick="show()"/>
 			<p id="pid0"></p>
