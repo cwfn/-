@@ -80,7 +80,7 @@
 			.h6{
 				position: absolute;
 				top:80%;
-				left: 90%;
+				left: 86%;
 			}
 		</style>
 		
