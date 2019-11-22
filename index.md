@@ -83,6 +83,30 @@
 				left: 86%;
 			}
 		</style>
+		 <style>
+        #txt-input,#txt-output
+        {
+            height:60px;
+        }
+    </style>
+    <script type="text/javascript">
+        //定义加密函数
+        function encrypt() 
+        {
+            //获取输入框的值
+            var str = document.getElementById("txt-input").value;
+            //将输入框的值加密，并赋给输出框
+            document.getElementById("txt-ouput").value = escape(str);
+        }
+        //定义解密函数
+        function decrypt() 
+        {
+            //获取输入框的值
+            var str = document.getElementById("txt-input").value;
+            //将输入框的值加密，并赋给输出框
+            document.getElementById("txt-ouput").value = unescape(str);
+        }
+    </script>
 		
 	</head>
 	
@@ -104,7 +128,14 @@
 			<p id="out"></p>
 			<p id="out1"></p>
 		</div>
-		
+		<br /><br /><br /><br /><br />
+    <form>
+        <textarea id="txt-input" cols="20"></textarea><br />
+        <input id="btn-encrypt" type="button" value="加密" onclick="encrypt()"/>
+        <input id="btn-decrypt" type="button" value="解密" onclick="decrypt()"/>
+        <input id="Reset1" type="reset" value="清空" /><br />
+        <textarea id="txt-ouput" cols="20"></textarea>
+    </form>
 		
 	</body>
 </html>
